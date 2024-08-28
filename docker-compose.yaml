@@ -1,0 +1,56 @@
+version: '3'
+services:
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - net1
+    depends_on:
+      - server
+
+  
+  db:
+    build: 
+      context: .
+      dockerfile: Dockerfile-db
+    ports:
+      - "3306:3306"
+    networks:
+      - net1
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile-server
+    ports:
+      - "8080:8080"
+    networks:
+      - net1
+    depends_on:
+      db:
+        condition: service_healthy
+
+  pydrill:
+    build:
+      context: ./pydriller
+      dockerfile: Dockerfile-pydriller
+    ports:
+      - "5000:5000"
+    networks:
+      - net1
+    depends_on:
+      - server
+
+
+networks:
+  net1:
+    driver: bridge

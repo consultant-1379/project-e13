@@ -1,0 +1,236 @@
+$header: #242424;
+$white: #fff;
+$green: #0fc373;
+$blue1: #000082;
+$blue2: #0050ca;
+$ericsson-blue: #0082f0;
+$blue3: #48a8fa;
+$gray2: #767676;
+$gray3: #a0a0a0;
+$gray4: #e0e0e0;
+$gray5: #f2f2f2;
+
+@font-face {
+    font-family: "Ericsson-Hilda";
+    src: url("../public/fonts/EricssonHilda-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Ericsson-Hilda", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    background-color: $gray4;
+    overflow-x: hidden;
+
+    #viewbutton{
+
+    }
+
+    a {
+        color: $blue1;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $ericsson-blue;
+    }
+}
+
+.container {
+    position: relative;
+    background-color: $gray4;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    .header {
+        position: relative;
+        background-color: $header;
+        width: 100vw;
+        height: 75px;
+        margin: 0;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+
+        .header_logo {
+            display: inline-block;
+            position: relative;
+            width: 150px;
+            top: 12.5px;
+            left: 5px;
+            margin: 0;
+            img {
+                width: 150px;
+                height: 50px;
+            }
+        }
+
+        .header_title {
+            display: inline-block;
+            position: relative;
+            bottom: 2.5px;
+            left: 0;
+            color: $white;
+            font-size: 20px;
+            font-weight: bold;
+            width: 500px;
+            padding: 20px 0;
+
+            h1 {
+                margin: 0;
+            }
+        }
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+
+        #viewButton{
+            text-decoration: none;
+            padding:5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            color: $gray5;
+            background: $green;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+        #viewButton:hover{
+            background: #0c9b5b;
+        }
+
+        .table {
+            position: relative;
+            border-radius: 8px;
+            left: 20%;
+            top: 10%;
+            background-color: $gray5;
+            width: 60%;
+            height: 75vh;
+            overflow-y: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+            .table_header {
+                width: 100%;
+                height: 35px;
+                color: $ericsson-blue;
+                text-align: center;
+                font-size: 15px;
+                font-weight: bold;
+                margin: 30px 0 !important;
+                padding: 0;
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+                th {
+                    margin:0;
+                    padding: 0;
+                }
+            }
+
+            .table_content {
+                position: relative;
+                width: 100%;
+                overflow-y: scroll;
+                padding: 0;
+                margin: 0;
+
+                td {
+                    text-align: center;
+                    padding: 5px;
+                }
+                
+            }
+        }
+
+        .data-list {
+            flex: .75;
+            margin: 5%;
+            width: 40%;
+            background-color: $white;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            width: 450px;
+            border-radius: 8px;
+            padding: 20px;
+            ul{
+                margin-left: 50px;
+                padding: 0;
+                list-style-type: none;
+                li{
+                    text-align: left;
+                    justify-content: center;
+                    margin-bottom: 15px;
+                    b{
+                        color: $ericsson-blue;
+                    }
+                }
+                li:first-child{
+                    position: relative;
+                    left: -20px;
+                    h3{
+                        margin-bottom: 0;
+                        text-align: center;
+                    }
+                    border-bottom: $header solid 1px;
+                }
+                
+            }
+        }
+
+        .graph {
+            border-radius: 8px;
+            position: relative;
+            background-color: $white;
+            flex: 1;
+            width: 650px;
+            height: 450px;
+            margin: 8% 5%;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            .chart{
+                width: 100%;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+            }
+            .graph-options{
+                margin-bottom: 5px;
+                select{
+                    width: 300px;
+                }
+                label{
+                    margin: 0 20px 0 0;
+                    
+                }
+            }
+        }
+
+
+    }
+
+    footer {
+        .footer {
+            position: relative;
+            background-color: $header;
+            color: $white;
+            width: 100vw;
+            height: 30px;
+            margin-bottom: 0;
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+}

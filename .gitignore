@@ -1,0 +1,12 @@
+.vscode/
+.idea/
+.pytest_cache/
+.scannerwork/
+.pydriller/.pytest_cache/
+.pydriller/.scannerwork/
+.pydriller/__pycache__/
+.pydriller/src/__pycache__/
+.pydriller/tests/__pycache__/
+.server/.vscode/
+.idea/
+application.properties

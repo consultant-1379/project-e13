@@ -1,0 +1,16 @@
+This is a guide to connect spring boot with the mysql database.
+Firstly, if you haven't installed mysql server already, please go download it
+https://dev.mysql.com/downloads/mysql/
+
+While setting it up
+username: root
+password: (in application.properties) please ask the team.
+
+Then, create a database in mysql server (open terminal)
+- mysql -u root -p (hit enter)
+- enter password
+- CREATE DATABASE git_mining_db;
+- EXIT;
+
+Then you can start the spring boot server.
+
